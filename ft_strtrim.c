@@ -1,22 +1,21 @@
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:49:41 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:17:31 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strtrim(char const *str)
 {
-	int i;
-	char *res;
+	int		i;
+	char	*res;
 
 	i = 0;
 	if (res = malloc(sizeof(char) * (ft_strlen(str) + 1)))

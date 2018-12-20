@@ -1,56 +1,59 @@
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:57:51 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 19:54:32 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int		get_len(int n)
+{
+	int len;
+
+	len = 0;
+	if (n < 0)
+	{
+		++len;
+	}
+	while (n > 0)
+	{
+		++len;
+		n = n / 10;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
-	int i;
-	int n2;
-	int neg;
-	int len;
-	char *str;
+	int		i;
+	char	*str;
 
-	n2 = n;
-	len = 0;
-	neg = 0;
 	if (n == -2147483648)
 	{
 		return (ft_strdup("-2147483648"));
 	}
-	if (n < 0)
+	i = get_len(n) - 1;
+	if (str = malloc(sizeof(char) * (get_len(n) + 1)))
 	{
-		neg = 1;
-		len = 1;
-		n2 = -n;
-	}
-	while (n2 > 0)
-	{
-		++len;
-		n2 = n2 / 10;
-	}
-	i = len - 1;
-	n2 = n;
-	if (str = malloc(sizeof(char) * (len + 1)))
-	{
-		if (neg)
+		if (n < 0)
 		{
+			n = -n;
 			str[0] = '-';
-			n2 = -n;
 		}
-		while (n2 > 0)
+		while (n > 0)
 		{
-			str[i] = (n2 % 10) + 48;
+			str[i] = (n % 10) + 48;
 			--i;
-			n2 = n2 / 10;
+			n = n / 10;
 		}
-		str[len] = '\0';
-		printf("%s \n",str);
+		str[i] = '\0';
 		return (str);
-	}	
+	}
 	return (NULL);
-}
-
-int	main(int argc, char **argv)
-{
-	char *str = ft_itoa(-2147483648);
-	return (0);
 }

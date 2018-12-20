@@ -1,15 +1,16 @@
-int	ft_strlen(char *str)
-{
-	int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:46:06 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:08:56 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
-
+#include "libft.h"
 
 int	ft_strequ(char const *s1, char const *s2, size_t n)
 {
@@ -25,5 +26,4 @@ int	ft_strequ(char const *s1, char const *s2, size_t n)
 		return (1);
 	}
 	return (0);
-
 }

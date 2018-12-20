@@ -1,7 +1,18 @@
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:50:38 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:15:58 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	*how_many_char(char const *str, char c, int nb)
+#include "libft.h"
+
+int		*how_many_char(char const *str, char c, int nb)
 {
 	int i;
 	int j;
@@ -9,7 +20,7 @@ int	*how_many_char(char const *str, char c, int nb)
 
 	i = 0;
 	j = 1;
-	if (res = malloc(sizeof(int)*nb))
+	if (res = malloc(sizeof(int) * nb))
 	{
 		while (str[j] && i < nb)
 		{
@@ -17,21 +28,18 @@ int	*how_many_char(char const *str, char c, int nb)
 			{
 				++res[i];
 			}
-			else
+			if (str[j] == c && str[j + 1] && str[j + 1] != c)
 			{
-				if (str[j + 1] && str[j + 1] != c)
-				{
-					++i;
-				}
+				++i;
 			}
-			++j;		
+			++j;
 		}
 		return (res);
 	}
 	return (NULL);
 }
 
-int	how_many_str(char const *str, char c)
+int		how_many_str(char const *str, char c)
 {
 	int nb;
 	int i;
@@ -49,7 +57,7 @@ int	how_many_str(char const *str, char c)
 	return (nb);
 }
 
-char	**remplir(char **out, char const *str, char c, int *res, int nb)
+char	**remplir(char **out, char const *str, char c, int nb)
 {
 	int i;
 	int j;
@@ -65,14 +73,11 @@ char	**remplir(char **out, char const *str, char c, int *res, int nb)
 			out[i][k] = str[j];
 			++k;
 		}
-		else 
+		if (str[j] == c && str[j + 1] && str[j + 1] != c)
 		{
-			if (str[j + 1] && str[j + 1] != c)
-			{
-				out[i][k] = '\0';
-				++i;
-				k = 0;
-			}
+			out[i][k] = '\0';
+			++i;
+			k = 0;
 		}
 		++j;
 	}
@@ -82,15 +87,15 @@ char	**remplir(char **out, char const *str, char c, int *res, int nb)
 
 char	**ft_strsplit(char const *str, char c)
 {
-	int nb;
-	int i;
-	int *res;
-	char **out;
+	int		nb;
+	int		i;
+	int		*res;
+	char	**out;
 
 	i = 0;
-	nb = how_many_str(str,c);
-	res = how_many_char(str,c,nb);
-	if (out = malloc(sizeof(char*)*nb))
+	nb = how_many_str(str, c);
+	res = how_many_char(str, c, nb);
+	if (out = malloc(sizeof(char*) * nb))
 	{
 		while (i < nb)
 		{
@@ -105,7 +110,6 @@ char	**ft_strsplit(char const *str, char c)
 			}
 		}
 	}
-	out = remplir(out, str, c, res, nb);
+	out = remplir(out, str, c, nb);
 	return (NULL);
 }
-

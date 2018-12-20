@@ -1,36 +1,32 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:28:58 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:15:16 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+char	*ft_strstr(char *hay, const char *needle, size_t lenmax)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
-
-char	*ft_strstr(char *haystack, const char *needle, size_t lenmax)
-{
-	int i;
-	int j;
-	int len;
-	char *res;
+	int		i;
+	int		j;
+	int		len;
+	char	*res;
 
 	i = 0;
 	j = 0;
 	len = ft_strlen(needle);
-	while (haystack[i] && i < lenmax)
+	while (hay[i] && i < lenmax)
 	{
-		while (haystack[i] != needle[j] && i < lenmax)
+		while (hay[i] && needle[j] && hay[i] == needle[j] && i < lenmax)
 		{
-			++i;
-		}
-		while (haystack[i] && needle[j] && haystack[i] == needle[j] && i < lenmax)
-		{
-			res = haystack + i;
+			res = hay + i;
 			++i;
 			++j;
 			if (j == len)

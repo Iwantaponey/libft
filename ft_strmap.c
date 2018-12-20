@@ -1,22 +1,21 @@
-#include <syslib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:43:33 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:12:55 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strmap(char const *str, char (*f) (char))
 {
-	char *res;
-	int i;
+	char	*res;
+	int		i;
 
 	i = 0;
 	if (res = malloc(ft_strlen(str) + 1))

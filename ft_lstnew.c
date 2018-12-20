@@ -1,5 +1,16 @@
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 19:57:10 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:22:46 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
@@ -9,14 +20,14 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (content == NULL)
 		{
-			new -> content = NULL;
-			new -> content_size = 0;
-			new -> next = NULL;
+			new->content = NULL;
+			new->content_size = 0;
+			new->next = NULL;
 			return (new);
 		}
-		new -> content = content;
-		new -> content_size = content_size;
-		new -> next = NULL;
+		new->content = content;
+		new->content_size = content_size;
+		new->next = NULL;
 		return (new);
 	}
 	return (NULL);

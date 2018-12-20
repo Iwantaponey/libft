@@ -1,24 +1,26 @@
-int	ft_strlen(char *str)
-{
-	int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:03:58 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:07:57 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(char *str)
 {
-	int i;
-	int len;
-	char *str2;
+	int		i;
+	int		len;
+	char	*str2;
 
 	len = ft_strlen(str);
 	i = 0;
-	if (!(str2 = malloc(sizeof(char)*(len+1))))
+	if (!(str2 = malloc(sizeof(char) * (len + 1))))
 	{
 		return (NULL);
 	}

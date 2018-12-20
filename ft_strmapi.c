@@ -1,7 +1,18 @@
-#include <syslib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 18:44:21 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 20:13:16 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+int		ft_strlen(char *str)
 {
 	int i;
 
@@ -15,8 +26,8 @@ int	ft_strlen(char *str)
 
 char	*ft_strmap(char const *str, char (*f) (unsigned int, char))
 {
-	char *res;
-	int i;
+	char	*res;
+	int		i;
 
 	i = 0;
 	if (res = malloc(ft_strlen(str) + 1))

@@ -1,3 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/20 17:24:16 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/20 19:51:32 by jsegueni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	is_white(char c)
+{
+	if (c == ' ' || c == '\t' || c == '\n')
+	{
+		return (1);
+	}
+	if (c == '\v' || c == '\r' || c == '\f')
+	{
+		return (1);
+	}
+	return (0);
+}
+
+int	is_neg(char c)
+{
+	if (c == '-')
+	{
+		return (1);
+	}
+	return (0);
+}
+
 int	ft_atoi(char *str)
 {
 	int nb;
@@ -6,17 +42,13 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	nb = 0;
-	neg = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
+	while (!(is_white(str[i])))
 	{
 		++i;
 	}
-	if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		neg = 1;
-	}
-	if (str[i] == '+')
-	{
+		neg = is_neg(str[i]);
 		++i;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
