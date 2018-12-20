@@ -1,20 +1,7 @@
-#include <unistd.h>
-
-void	ft_putchara(char c)
+void	ft_putnbr(int n)
 {
-	write(1, &c, 1); 
+	char *str;
+
+	str = ft_itoa(n);
+	ft_putstr(str);
 }
-
-void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchara(str[i]);
-		++i;
-	}
-}
-
-
