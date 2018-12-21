@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 19:35:32 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 19:42:03 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:48:19 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char			*ft_strcpy(char *dest, const char *src);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncat(char *dest, const char *src, size_t n);
-char			*ft_strlcat(char *dest, const char *src, size_t n);
+size_t			ft_strlcat(char *dest, const char *src, size_t n);
 char			*ft_strchr(char *s, int c);
 char			*ft_strrchr(char *s, int c);
 char			*ft_strstr(char *haystack, const char *needle);
@@ -45,13 +45,13 @@ char			*ft_strnstr(char *haystack, const char *needle, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
-int				isalpha(int c);
-int				isdigit(int c);
-int				isalnum(int c);
-int				isascii(int c);
-int				isprint(int c);
-int				toupper(int c);
-int				tolower(int c);
+int				ft_isalpha(int c);
+int				ft_isdigit(int c);
+int				ft_isalnum(int c);
+int				ft_isascii(int c);
+int				ft_isprint(int c);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);

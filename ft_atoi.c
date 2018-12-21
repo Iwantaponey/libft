@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 17:24:16 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 21:12:49 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 22:22:09 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			ft_atoi(const char *str)
 
 	i = 0;
 	nb = 0;
-	while (!(is_white(str[i])))
+	while (is_white(str[i]))
 	{
 		++i;
 	}
@@ -53,7 +53,7 @@ int			ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		nb = (nb * 10) + str[i];
+		nb = (nb * 10) + (str[i] - 48);
 		++i;
 	}
 	if (neg)

@@ -6,17 +6,13 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:37:56 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 21:12:09 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 22:37:54 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
-	if (c < 32)
-	{
-		return (0);
-	}
-	return (c);
+	return (c > 31 && c < 128);
 }

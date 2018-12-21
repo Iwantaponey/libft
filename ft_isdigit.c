@@ -6,15 +6,15 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:35:30 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 19:53:37 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:41:35 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	if (c < 48 || c > 57)
+	if ((unsigned char)c < 48 || (unsigned char)c > 57)
 	{
 		return (0);
 	}

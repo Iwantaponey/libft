@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:57:51 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 21:11:41 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 23:21:15 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,39 @@ static int	get_len(int n)
 	if (n < 0)
 	{
 		++len;
+		n = -n;
 	}
 	while (n > 0)
 	{
+		printf(" len = %d \n n = %d", len,n);
 		++len;
 		n = n / 10;
 	}
+	printf("%d",len);
 	return (len);
+}
+
+static char	*cas_spe(int n)
+{
+	if (n == -2147483648)
+	{
+		return (ft_strdup("-2147483648"));
+	}
+	return (ft_strdup("0"));
 }
 
 char		*ft_itoa(int n)
 {
 	int		i;
 	char	*str;
+	int		n2;
 
-	if (n == -2147483648)
-	{
-		return (ft_strdup("-2147483648"));
-	}
+	n2 = n;
+	if (n == -2147483648 || n == 0)
+		return (cas_spe(n));
 	i = get_len(n) - 1;
-	if ((str = malloc(sizeof(char) * (get_len(n) + 1))))
+	printf("%d", get_len(n));
+/*	if ((str = malloc(sizeof(char) * (get_len(n) + 1))))
 	{
 		if (n < 0)
 		{
@@ -52,8 +65,13 @@ char		*ft_itoa(int n)
 			--i;
 			n = n / 10;
 		}
-		str[i] = '\0';
+		str[n2] = '\0';
 		return (str);
-	}
+	}*/
 	return (NULL);
+}
+
+int main ()
+{
+	printf("%s", ft_itoa(12345600));
 }

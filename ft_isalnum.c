@@ -6,13 +6,13 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:36:13 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 19:52:39 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:29:38 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	if (c < 48 || (c > 57 && c < 65) || (c > 90 && c < 97) || c > 122)
 	{
