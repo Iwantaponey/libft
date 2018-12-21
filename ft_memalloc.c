@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:39:01 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 19:57:49 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 19:38:38 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*mem;
-	int		i;
+	unsigned char	*mem;
+	int				i;
 
 	i = 0;
-	if (mem = malloc(size))
+	if ((mem = malloc(size)))
 	{
-		mem[i] = (void)0;
-		return (mem);
+		mem[i] = '\0';
+		return ((void *)mem);
 	}
 	return (NULL);
 }

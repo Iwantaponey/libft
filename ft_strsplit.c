@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:50:38 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:15:58 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 19:04:08 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		*how_many_char(char const *str, char c, int nb)
 
 	i = 0;
 	j = 1;
-	if (res = malloc(sizeof(int) * nb))
+	if ((res = malloc(sizeof(int) * nb)))
 	{
 		while (str[j] && i < nb)
 		{
@@ -95,11 +95,11 @@ char	**ft_strsplit(char const *str, char c)
 	i = 0;
 	nb = how_many_str(str, c);
 	res = how_many_char(str, c, nb);
-	if (out = malloc(sizeof(char*) * nb))
+	if ((out = malloc(sizeof(char*) * nb)))
 	{
 		while (i < nb)
 		{
-			if (out[i] = malloc(sizeof(char) * (res[i] + 1)))
+			if ((out[i] = malloc(sizeof(char) * (res[i] + 1))))
 			{
 				++i;
 			}

@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:49:41 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:17:31 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 19:35:50 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *str)
 	char	*res;
 
 	i = 0;
-	if (res = malloc(sizeof(char) * (ft_strlen(str) + 1)))
+	if ((res = malloc(sizeof(char) * (ft_strlen(str) + 1))))
 	{
 		while (str[i])
 		{

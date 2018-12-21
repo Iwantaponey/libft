@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 17:39:59 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 19:51:52 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 19:50:15 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	int		i;
+	char	*s2;
 
 	i = 0;
-	while (i < n)
+	s2 = (char *)s;
+	while (i < (int)n)
 	{
-		*s = (void)'\0';
-		s = s + 1;
+		s2[i] = '\0';
 		++i;
 	}
 }

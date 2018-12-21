@@ -6,22 +6,22 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:46:06 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:08:56 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 17:27:51 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strequ(char const *s1, char const *s2, size_t n)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	int i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] && i < n)
+	while (s1[i] == s2[i] && s1[i] && i < (int)n)
 	{
 		++i;
 	}
-	if (!(s1[i]) || !(s2[i]) || i == n)
+	if (!(s1[i]) || !(s2[i]) || i == (int)n)
 	{
 		return (1);
 	}
