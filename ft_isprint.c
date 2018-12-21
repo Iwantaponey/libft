@@ -6,13 +6,13 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:37:56 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 19:54:07 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:12:09 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isprint(char c)
 {
 	if (c < 32)
 	{

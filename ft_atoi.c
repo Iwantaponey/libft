@@ -6,13 +6,13 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 17:24:16 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 17:13:38 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:12:49 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_white(char c)
+static int	is_white(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n')
 	{
@@ -25,7 +25,7 @@ int	is_white(char c)
 	return (0);
 }
 
-int	is_neg(char c)
+static int	is_neg(char c)
 {
 	if (c == '-')
 	{
@@ -34,7 +34,7 @@ int	is_neg(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int nb;
 	int neg;

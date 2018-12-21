@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:01:58 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 19:40:13 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 20:58:56 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(void *s, int c, size_t n)
 	{
 		if (s2[i] == (unsigned char)c)
 		{
-			return (s2 + i);
+			return (s + i);
 		}
 		++i;
 	}

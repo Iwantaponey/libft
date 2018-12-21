@@ -6,13 +6,13 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:50:38 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 19:04:08 by jsegueni         ###   ########.fr       */
+/*   Updated: 2018/12/21 21:17:29 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		*how_many_char(char const *str, char c, int nb)
+static int	*how_many_char(char const *str, char c, int nb)
 {
 	int i;
 	int j;
@@ -39,7 +39,7 @@ int		*how_many_char(char const *str, char c, int nb)
 	return (NULL);
 }
 
-int		how_many_str(char const *str, char c)
+static int	how_many_str(char const *str, char c)
 {
 	int nb;
 	int i;
@@ -57,7 +57,7 @@ int		how_many_str(char const *str, char c)
 	return (nb);
 }
 
-char	**remplir(char **out, char const *str, char c, int nb)
+static char	**remplir(char **out, char const *str, char c, int nb)
 {
 	int i;
 	int j;
@@ -85,7 +85,7 @@ char	**remplir(char **out, char const *str, char c, int nb)
 	return (out);
 }
 
-char	**ft_strsplit(char const *str, char c)
+char		**ft_strsplit(char const *str, char c)
 {
 	int		nb;
 	int		i;
