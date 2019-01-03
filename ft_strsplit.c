@@ -5,123 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 18:50:38 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 21:42:43 by jsegueni         ###   ########.fr       */
+/*   Created: 2019/01/03 22:44:42 by jsegueni          #+#    #+#             */
+/*   Updated: 2019/01/03 22:55:09 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	*how_many_char(char const *str, char c, int nb)
+static size_t		ft_count_word(char const *s, char c)
 {
-	int i;
-	int j;
-	int *res;
+	size_t	i;
+	size_t	count;
 
+	count = 0;
 	i = 0;
-	j = 1;
-	if ((res = malloc(sizeof(int) * nb)))
+	while (s[i] != '\0')
 	{
-		while (str[j] && i < nb)
-		{
-			if (str[j] != c)
-			{
-				++res[i];
-			}
-			if (str[j] == c && str[j + 1] && str[j + 1] != c)
-			{
-				++i;
-			}
-			++j;
-		}
-		return (res);
+		while (s[i] == c)
+			i++;
+		if ((i == 1 && s[i] != c) || (s[i] != c && s[i - 1] == c))
+			count++;
+		i++;
 	}
-	return (NULL);
+	return (count);
 }
 
-static int	how_many_str(char const *str, char c)
+static int			ft_is_begin_word(char const *s, size_t index, char c)
 {
-	int nb;
-	int i;
+	if (index == 0 && s[index] != c)
+		return (1);
+	if (s[index] != c && s[index - 1] == c)
+		return (1);
+	return (0);
+}
+
+char				**ft_strsplit(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	**tab;
 
 	i = 0;
-	nb = 0;
-	while (str[i])
+	k = 0;
+	if ((tab = (char **)malloc(sizeof(char *) * ft_count_word(s, c))) == NULL)
+		return (NULL);
+	if (ft_count_word(s, c) == 0)
+		return (tab);
+	while (s[i] == c)
+		i++;
+	while (s[i])
 	{
-		if (str[i] == c && str[i + 1] && str[i + 1] != c)
+		j = 0;
+		if (ft_is_begin_word(s, i, c))
 		{
-			++nb;
+			while (s[i + j] != c && s[i + j])
+				++j;
+			tab[++k] = ft_strsub(s, i, j);
 		}
 		++i;
 	}
-	return (nb);
-}
-
-static char	**remplir(char **out, char const *str, char c, int nb)
-{
-	int i;
-	int j;
-	int k;
-
-	i = 0;
-	j = 1;
-	k = 0;
-	while (str[j] && i < nb)
-	{
-		if (str[j] != c)
-		{
-			out[i][k] = str[j];
-			++k;
-		}
-		if (str[j] == c && str[j + 1] && str[j + 1] != c)
-		{
-			out[i][k] = '\0';
-			++i;
-			k = 0;
-		}
-		++j;
-	}
-	out[i][k] = '\0';
-	return (out);
-}
-
-char		**ft_strsplit(char const *str, char c)
-{
-	int		nb;
-	int		i;
-	int		*res;
-	char	**out;
-
-	i = 0;
-	nb = how_many_str(str, c);
-	printf("nb = %d", nb);
-	res = how_many_char(str, c, nb);
-	if ((out = malloc(sizeof(char*) * nb)))
-	{
-		while (i < nb)
-		{
-			if ((out[i] = malloc(sizeof(char) * (res[i] + 1))))
-			{
-				++i;
-			}
-			else
-			{
-				free(out);
-				return (NULL);
-			}
-		}
-	}
-	out = remplir(out, str, c, nb);
-	*/return (NULL);
-}
-
-int	main()
-{
-	char *str;
-	str = "*salut*les***etudiants*";
-//	char **out;
-	ft_strsplit(str, '*');
-//	printf("%s \n%s \n%s \n", out[0], out[1], out[2]);
-
-	return (0);
+	return (tab);
 }
