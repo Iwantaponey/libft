@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:43:33 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 17:32:04 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 19:26:29 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strmap(char const *str, char (*f) (char))
 			res[i] = f(str[i]);
 			++i;
 		}
+		res[i] = '\0'
 		return (res);
 	}
 	return (NULL);
