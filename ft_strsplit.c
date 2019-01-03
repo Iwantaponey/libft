@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:50:38 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 21:17:29 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 21:42:43 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ char		**ft_strsplit(char const *str, char c)
 
 	i = 0;
 	nb = how_many_str(str, c);
+	printf("nb = %d", nb);
 	res = how_many_char(str, c, nb);
 	if ((out = malloc(sizeof(char*) * nb)))
 	{
@@ -111,5 +112,16 @@ char		**ft_strsplit(char const *str, char c)
 		}
 	}
 	out = remplir(out, str, c, nb);
-	return (NULL);
+	*/return (NULL);
+}
+
+int	main()
+{
+	char *str;
+	str = "*salut*les***etudiants*";
+//	char **out;
+	ft_strsplit(str, '*');
+//	printf("%s \n%s \n%s \n", out[0], out[1], out[2]);
+
+	return (0);
 }
