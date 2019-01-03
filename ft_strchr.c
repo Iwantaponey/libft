@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:12:12 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:06:05 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 16:20:48 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ char	*ft_strchr(char *s, int c)
 			return (s + i);
 		}
 		++i;
+	}
+	if (s[i] == (char)c)
+	{
+		return (s + i);
 	}
 	return (NULL);
 }

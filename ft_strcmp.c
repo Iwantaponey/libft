@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:32:49 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:06:40 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 16:46:22 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_strcmp(const char *s1, const char *s2)
 	{
 		++i;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:09:06 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 17:39:21 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 16:24:39 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,19 @@
 char	*ft_strcat(char *dest, const char *src)
 {
 	int i;
+	int j;
 
 	i = 0;
+	j = 0;
 	while (dest[i])
 	{
 		++i;
 	}
-	i = 0;
-	while (src[i])
+	while (src[j])
 	{
-		dest[i] = src[i];
+		dest[i] = src[j];
 		++i;
+		++j;
 	}
 	dest[i] = '\0';
 	return (dest);

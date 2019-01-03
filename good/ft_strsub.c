@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 18:01:58 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 16:10:08 by jsegueni         ###   ########.fr       */
+/*   Created: 2018/12/20 18:46:33 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/21 17:25:53 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+char	*ft_strsub(char const *str, unsigned int start, size_t len)
 {
 	int		i;
-	char	*s2;
+	int		j;
+	char	*res;
 
-	s2 = (char *)s;
 	i = 0;
-	while (i < (int)n)
+	j = (int)start;
+	if (!(res = malloc(sizeof(char) * (len + 1))))
 	{
-		if ((unsigned char)s2[i] == (unsigned char)c)
-		{
-			return (s + i);
-		}
-		++i;
+		return (NULL);
 	}
-	return (NULL);
+	while (j < (int)start + (int)len)
+	{
+		res[i] = str[j];
+		++i;
+		++j;
+	}
+	res[i] = '\0';
+	return (res);
 }

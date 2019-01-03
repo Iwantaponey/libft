@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:42:52 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/20 20:09:41 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 16:43:40 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	ft_striteri(char *str, void (*f) (unsigned int, char *))
 	while (str[i])
 	{
 		f(i, str + i);
+		++i;
 	}
 }

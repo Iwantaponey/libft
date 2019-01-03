@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 18:01:58 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 16:10:08 by jsegueni         ###   ########.fr       */
+/*   Created: 2018/12/20 18:44:54 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/21 17:28:51 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int		i;
-	char	*s2;
+	int flag;
+	int i;
 
-	s2 = (char *)s;
+	flag = 0;
 	i = 0;
-	while (i < (int)n)
+	if (ft_strlen(s1) != ft_strlen(s2))
 	{
-		if ((unsigned char)s2[i] == (unsigned char)c)
-		{
-			return (s + i);
-		}
+		return (0);
+	}
+	while (s1[i] == s2[i] && s1[i])
+	{
 		++i;
 	}
-	return (NULL);
+	if (!(s1[i]))
+	{
+		return (1);
+	}
+	return (0);
 }

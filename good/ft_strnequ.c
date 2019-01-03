@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 18:01:58 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 16:10:08 by jsegueni         ###   ########.fr       */
+/*   Created: 2018/12/20 18:46:06 by jsegueni          #+#    #+#             */
+/*   Updated: 2018/12/21 17:27:51 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int		i;
-	char	*s2;
+	int i;
 
-	s2 = (char *)s;
 	i = 0;
-	while (i < (int)n)
+	while (s1[i] == s2[i] && s1[i] && i < (int)n)
 	{
-		if ((unsigned char)s2[i] == (unsigned char)c)
-		{
-			return (s + i);
-		}
 		++i;
 	}
-	return (NULL);
+	if (!(s1[i]) || !(s2[i]) || i == (int)n)
+	{
+		return (1);
+	}
+	return (0);
 }
