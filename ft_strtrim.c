@@ -6,30 +6,40 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:49:41 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 19:35:50 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 20:16:37 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *str)
+static int	iswhite(char c)
+{
+	if (c == '\t')
+		return (1);
+	if (c == ' ')
+		return (1);
+	if (c == '\n')
+		return (1);
+	return (0);
+}
+
+char		*ft_strtrim(char const *str)
 {
 	int		i;
+	int 	len;
 	char	*res;
 
 	i = 0;
-	if ((res = malloc(sizeof(char) * (ft_strlen(str) + 1))))
+	len = ft_strlen(str);
+	while (str[i])
 	{
-		while (str[i])
+		while (iswhite(str[i]))
 		{
-			if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
-			{
-				res[i] = str[i];
-			}
+			len--;
 			++i;
 		}
-		res[i] = '\0';
-		return (res);
+	
+		++i;
 	}
-	return (NULL);
+
 }
