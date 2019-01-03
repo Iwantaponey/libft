@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:48:31 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 19:34:56 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 19:32:59 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
+	int		j;
 	char	*res;
 
 	i = 0;
@@ -22,16 +23,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		while (s1[i])
 		{
-			res[i] = s1[i];
+			res[j] = s1[i];
 			++i;
+			++j
 		}
 		i = 0;
 		while (s2[i])
 		{
-			res[i] = s2[i];
+			res[j] = s2[i];
 			++i;
+			++j
 		}
-		res[i] = '\0';
+		res[j] = '\0';
 		return (res);
 	}
 	return (NULL);
