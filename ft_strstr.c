@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:14:06 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 19:07:00 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 21:19:51 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strstr(char *haystack, const char *needle)
 		{
 			++j;
 			if (!needle[j])
-				return (haystack +i);
+				return (haystack + i);
 		}
 		++i;
 	}

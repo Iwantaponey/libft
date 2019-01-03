@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:28:58 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 19:17:17 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 21:18:28 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(char *hay, const char *needle, size_t lenmax)
 	if (!(*needle))
 	{
 		return (hay);
-	}	
+	}
 	while (hay[i] && i < (int)lenmax)
 	{
 		while (needle[j] && hay[i + j] == needle[j] && (i + j) < (int)lenmax)
