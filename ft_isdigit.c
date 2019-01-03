@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:35:30 by jsegueni          #+#    #+#             */
-/*   Updated: 2018/12/21 21:41:35 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/03 18:26:05 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	ft_isdigit(int c)
 {
-	if ((unsigned char)c < 48 || (unsigned char)c > 57)
-	{
-		return (0);
-	}
-	return (c);
+	return (c > 47 && c < 58);
 }
