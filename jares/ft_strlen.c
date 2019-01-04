@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:03:13 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/04 06:26:26 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/04 06:45:34 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
-//	if (!str)
-//		return (0);
 	while (str[i])
 	{
 		++i;
