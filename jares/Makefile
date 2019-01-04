@@ -58,10 +58,10 @@ SRC = ./ft_putchar.c \
 	  ./ft_strsub.c 
 INC = ./libft.h
 NAME = libft.a
-OBJ = $(SRC:%c=%o)
+OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
-..PHONY: all
+.PHONY: all
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -70,15 +70,15 @@ $(NAME): $(OBJ)
 	ranlib $@
 
 %.o: %.c $(INC)
-	gcc $(FLAGS) -c $^ -I $(INC) -o $@
+	gcc $(FLAGS) -c $< -I $(INC) -o $@
 
-..PHONY : clean
+.PHONY : clean
 clean:
 	rm -f *.o
 
-..PHONY : fclean
+.PHONY : fclean
 fclean: clean
 	rm -f libft.a
 
-..PHONY : re
+.PHONY : re
 re: fclean all
