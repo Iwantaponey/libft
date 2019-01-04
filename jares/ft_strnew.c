@@ -6,7 +6,7 @@
 /*   By: jsegueni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 18:41:08 by jsegueni          #+#    #+#             */
-/*   Updated: 2019/01/03 19:25:07 by jsegueni         ###   ########.fr       */
+/*   Updated: 2019/01/04 06:35:23 by jsegueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnew(size_t size)
 	i = 0;
 	if (size == 0)
 	{
-		return ("\0");
+		return (ft_strdup(""));
 	}
 	if ((str = malloc(sizeof(char) * (size + 1))))
 	{
